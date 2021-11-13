@@ -29,7 +29,7 @@
 
             <form method="POST" action="{{ route('saveItem') }}" accept-charset="UTF-8">
                 {{ csrf_field() }}
-                <input type="t ext" name="todoItem" id="todoItem" class="form-control" placeholder="Enter new todo item">
+                <input type="t ext" name="todoItem" id="todoItem" class="form-control" placeholder="Enter new todo item" required>
                 <button type="submit" class="btn-default">Save</button>
             </form>
         </div>
