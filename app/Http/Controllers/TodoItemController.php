@@ -8,7 +8,7 @@ use App\Models\TodoItem;
 class TodoItemController extends Controller
 {
     public function index() {
-        return view('welcome', ['todoItems' => TodoItem::all()]);
+        return view('welcome', ['todoItems' => TodoItem::where('is_complete', 0)->get()]);
     }
     
     public function saveTodo(Request $request) {
