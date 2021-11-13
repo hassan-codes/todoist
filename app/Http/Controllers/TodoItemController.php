@@ -7,6 +7,10 @@ use App\Models\TodoItem;
 
 class TodoItemController extends Controller
 {
+    public function index() {
+        return view('welcome', ['todoItems' => TodoItem::all()]);
+    }
+    
     public function saveItem(Request $request) {
         
         $todoItem = new TodoItem();

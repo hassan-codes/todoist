@@ -32,8 +32,12 @@
                 <input type="t ext" name="todoItem" id="todoItem" class="form-control" placeholder="Enter new todo item" required>
                 <button type="submit" class="btn-default">Save</button>
             </form>
+
+            @foreach ($todoItems as $todoItem)
+                <p style="color: white;">{{ $todoItem->todo }}</p>
+            @endforeach
         </div>
     </div>
 </body>
 
-</html>
+</html> 
