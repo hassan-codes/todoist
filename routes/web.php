@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/saveItem', function () {
+    return view('welcome');
+})->name('saveItem');

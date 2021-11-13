@@ -27,9 +27,9 @@
         <div style="display: block;">
             <h1 style="color: #ef3b2d;">Todoist</h1>
 
-            <form method="POST" action="{{}}" accept-charset="UTF-8">
+            <form method="POST" action="{{ route('saveItem') }}" accept-charset="UTF-8">
                 {{ csrf_field() }}
-                <input type="text" name="todoItem" id="todoItem" class="form-control" placeholder="Enter new todo item">
+                <input type="t ext" name="todoItem" id="todoItem" class="form-control" placeholder="Enter new todo item">
                 <button type="submit" class="btn-default">Save</button>
             </form>
         </div>
