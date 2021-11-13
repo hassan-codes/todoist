@@ -18,6 +18,6 @@ class TodoItemController extends Controller
         $todoItem->is_complete = 0;
         $todoItem->save();
         
-        return view('welcome');
+        return redirect('/');
     }
 }
