@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Todoist</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,17 +27,23 @@
         <div style="display: block;">
             <h1 style="color: #ef3b2d;">Todoist</h1>
 
-            <form method="POST" action="{{ route('saveItem') }}" accept-charset="UTF-8">
+            <form method="POST" action="{{ route('saveTodo') }}" accept-charset="UTF-8">
                 {{ csrf_field() }}
                 <input type="t ext" name="todoItem" id="todoItem" class="form-control" placeholder="Enter new todo item" required>
                 <button type="submit" class="btn-default">Save</button>
             </form>
 
             @foreach ($todoItems as $todoItem)
-                <p style="color: white;">{{ $todoItem->todo }}</p>
+            <form method="POST" action="{{ route('completeTodo', $todoItem->id) }}" accept-charset="UTF-8">
+                {{ csrf_field() }}
+                <p style="color: white;">
+                    {{ $todoItem->todo }}&nbsp;&nbsp;
+                    <button type="submit" style="color: green;">✔</button>
+                </p>
+            </form>
             @endforeach
         </div>
     </div>
 </body>
 
-</html> 
+</html>

@@ -16,4 +16,6 @@ use App\Http\Controllers\TodoItemController;
 
 Route::get('/', [TodoItemController::class, 'index']);
 
-Route::post('/saveItem', [TodoItemController::class, 'saveItem'])->name('saveItem');
+Route::post('/saveTodo', [TodoItemController::class, 'saveTodo'])->name('saveTodo');
+
+Route::post('/completeTodo/{id}', [TodoItemController::class, 'completeTodo'])->name('completeTodo');
